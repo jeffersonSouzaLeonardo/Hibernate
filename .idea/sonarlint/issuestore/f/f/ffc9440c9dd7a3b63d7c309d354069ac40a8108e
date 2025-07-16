@@ -1,17 +1,0 @@
-
-H
-java:S1452#"&Remove usage of generic wildcard type.(õñ‡ùÿÿÿÿ8åÈÀú2
-X	java:S125="<This block of commented-out lines of code should be removed.(‡Ê†8åÈÀú2
-m
-java:S1128"PRemove this unused import 'com.algaworks.algafoods.domain.model.FormaPagamento'.(”˜…Ó8œÏİÀú2
-y
-java:S1128"WRemove this unused import 'com.algaworks.algafoods.domain.repository.CidadeRepository'.(ÊŠ£‚ÿÿÿÿÿ8œÏİÀú2
-|
-java:S1128"_Remove this unused import 'com.algaworks.algafoods.domain.repository.FormaPagamentoRepository'.(·Ûíµ8œÏİÀú2
-|
-java:S1128"_Remove this unused import 'com.algaworks.algafoods.infra.repository.exception.CidadeException'.(‡ÍÙµ8†±êÀú2
-]
-java:S1128
-"@Remove this unused import 'org.springframework.beans.BeanUtils'.(ŠğÄÜ8œÏİÀú2
-c
-java:S1128"ARemove this unused import 'org.springframework.http.HttpHeaders'.(ãŸñ×úÿÿÿÿ8œÏİÀú2
