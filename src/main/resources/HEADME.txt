@@ -1,0 +1,71 @@
+Rest -> Representation State Tranfer
+
+Constraints do Rest:
+    - Cliente / Servidor
+    - Stateless (Sem estado, na pratica a requisicao feita ao servidor deve conter td necessario para atender a requisicao.
+                   servidor nao pode mante uma sessao do cliente )
+    - api pode manter cache
+    - interface uniforme
+    - verbos http
+    - adicionar links na resposta
+    - sitemas em camadas, tem a possibilidade de ter outras maq entre o cli e server
+
+
+Composicao da Requisicao
+    Metodo: Get/Post etc
+    URI: Caminho para acessar
+    HTTP Versao: 1.1
+    Cabecalho: parametros que serao enviados como Content Type
+    CORPO/PAYLOAD: corpo da msg
+
+Composicao da Resposta
+    Status: 200,201,401 etc
+    Metodo: Get/Post etc
+    URI: Caminho para acessar
+    HTTP Versao: 1.1
+    Cabecalho: parametros que serao enviados como Content Type
+    CORPO/PAYLOAD: corpo da msg
+
+Recursos: Qualquer coisa disponivel na web;
+
+URI: Identeificador de recursos. Endereco de recurso dentro da APP "/cozinhas";
+URL: Caminho completo;
+
+
+Content Negotiation:
+    - Tipos de retorno que podemos ter, xml ou json;
+    - por default 'e json;
+    - no header da requisicao existe o parametro Accept = application/json ou xml
+    - para colocar como xml tem que colocar a dependencia no pom
+
+   <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml -->
+   <dependency>
+       <groupId>com.fasterxml.jackson.dataformat</groupId>
+       <artifactId>jackson-dataformat-xml</artifactId>
+       <version>2.13.5</version>
+   </dependency>
+
+Verbos HTTP:
+    GET: representacao de um recurso, nao pode ser usado para modificar um recurso (metodo idenpotente);
+    POST:  utilizado para modificar um recurso, nao eh idenpotente;
+    PUT: atualizar um recurso, nao idenpotente, tem que atualizar todo recurso, ex se tem 2 fields e pedi para atualizar apenas 1
+    o outro ira nulo;
+    PATCH: pode atualizar um recurso parcialmente, metodo indepotente;
+    DELETE: metodo indepotente;
+    HEAD: igual o get mas retorna apenas o cabecalho;
+    OPTIONS: retorna a lista de metodos de um recurso ;
+
+    idenpotencia: algo que tem a capacidade de ser aplicado mais de uma vez sem que o resultado se altere.
+
+
+Responses:
+
+    @ResponseStatus(HttpStatus.CREATED) : podemos escolher qual status podemos retornar;
+    StatusHttp para recursos vazio: 404 NotFound ou 204 NoContent;
+
+
+Criar a classe de service, criar as exceptions, usar String.format com d%;
+
+Desafio: mudar td do controller para servico,
+         remover o suporte xml do pom e td de xml do projeto;
+         Efetuar as consultas das cazinhas;
